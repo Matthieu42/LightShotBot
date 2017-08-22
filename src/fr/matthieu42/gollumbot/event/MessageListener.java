@@ -1,4 +1,4 @@
-package fr.matthieu42.gollumbot.Event;
+package fr.matthieu42.gollumbot.event;
 
 import fr.matthieu42.gollumbot.command.Command;
 import fr.matthieu42.gollumbot.command.Commands;

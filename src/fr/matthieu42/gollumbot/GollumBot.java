@@ -1,6 +1,6 @@
 package fr.matthieu42.gollumbot;
 
-import fr.matthieu42.gollumbot.Event.MessageListener;
+import fr.matthieu42.gollumbot.event.MessageListener;
 import fr.matthieu42.gollumbot.command.*;
 import fr.matthieu42.gollumbot.dialog.MentionHandler;
 import fr.matthieu42.gollumbot.music.MusicManager;

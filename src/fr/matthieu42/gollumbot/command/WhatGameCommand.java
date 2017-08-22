@@ -3,7 +3,6 @@ package fr.matthieu42.gollumbot.command;
 import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import org.apache.commons.lang3.ArrayUtils;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

@@ -28,14 +28,10 @@ public class WhatGameCommand extends Command {
                 nbPlayer = 0;
         }
         try {
-            String games2 = new String(Files.readAllBytes(Paths.get("./resources/text/games2.txt")));
-            String games3 = new String(Files.readAllBytes(Paths.get("./resources/text/games3.txt")));
-            String games4 = new String(Files.readAllBytes(Paths.get("./resources/text/games4.txt")));
-            String games5 = new String(Files.readAllBytes(Paths.get("./resources/text/games5.txt")));
-            String[] games2List = games2.split("\n");
-            String[] games3List = games3.split("\n");
-            String[] games4List = games4.split("\n");
-            String[] games5List = games5.split("\n");
+            String[] games2List = new String(Files.readAllBytes(Paths.get("./resources/text/games2.txt"))).split("\n");
+            String[] games3List = new String(Files.readAllBytes(Paths.get("./resources/text/games3.txt"))).split("\n");
+            String[] games4List = new String(Files.readAllBytes(Paths.get("./resources/text/games4.txt"))).split("\n");
+            String[] games5List = new String(Files.readAllBytes(Paths.get("./resources/text/games5.txt"))).split("\n");
             String[] games45List = ArrayUtils.addAll(games4List, games5List);
             String[] games345List = ArrayUtils.addAll(games45List, games3List);
             String[] games2345List = ArrayUtils.addAll(games345List, games2List);

@@ -31,7 +31,6 @@ public class GollumBot {
         } catch (LoginException | RateLimitedException e)
         {
             e.printStackTrace();
-            return;
         }
     }
 

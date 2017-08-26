@@ -1,5 +1,7 @@
 # Gollum-Discord-Bot
 A Gollum bot for discord, play youtube music and he can talk with you !
+## Add it now to your server !
+[Invite link](https://discordapp.com/oauth2/authorize?client_id=348050310435962890&scope=bot&permissions=3197952)
 
 ## Les différentes commandes :
 ### !aide

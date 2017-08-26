@@ -14,5 +14,5 @@ Passer la musique actuelle
 Vide la liste de lecture
 ### !liste
 Montrer file d'attente
-!queljeu
+### !queljeu
 Choisis aléatoirement un jeu à jouer suivant le nb de joueurs (2,3,4 ou + ) ou parmis tout les jeux si sans arguments

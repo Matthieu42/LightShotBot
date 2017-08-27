@@ -16,3 +16,5 @@ Vide la liste de lecture
 Montrer file d'attente
 ### !queljeu
 Choisis aléatoirement un jeu à jouer suivant le nb de joueurs (2,3,4 ou + ) ou parmis tout les jeux si sans arguments
+### !screen
+Prend une capture d'écran d'un site web donné

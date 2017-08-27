@@ -19,12 +19,13 @@ public class GollumBot {
             Commands commandsList = new Commands();
             MusicManager manager = new MusicManager();
             MentionHandler mentionHandler = new MentionHandler(manager);
-            commandsList.addCommands(new HelpCommand(),
+            commandsList.addCommands(new HelpCommand(commandsList),
                     new PlayCommand(manager),
                     new ClearCommand(manager),
                     new SkipCommand(manager),
                     new ShowQueueCommand(manager),
-                    new WhatGameCommand()
+                    new WhatGameCommand(),
+                    new WebToImageCommand()
             );
             JDA bot = new JDABuilder(AccountType.BOT).setToken("MzQ4MDUwMzEwNDM1OTYyODkw.DHhSoA.dnTs5eyidhyvOd7iznMPh1EHjfI").setGame(Game.of("Protéger le précieux")).buildAsync();
             bot.addEventListener(new MessageListener(commandsList,mentionHandler));

@@ -9,8 +9,11 @@ import java.awt.*;
 public class HelpCommand extends Command{
 
 
-    public HelpCommand() {
+    private Commands commands;
+
+    public HelpCommand(Commands commands) {
         super("!aide", "Affiche l'aide du bot");
+        this.commands = commands;
     }
 
     @Override
@@ -20,12 +23,9 @@ public class HelpCommand extends Command{
         EmbedBuilder help = new EmbedBuilder();
         help.setAuthor(botUser.getName(),"http://matthieu42.fr",botUser.getAvatarUrl());
         help.setTitle("Les différentes commandes");
-        help.addField("```!aide```",new HelpCommand().getDescription(),false);
-        help.addField("```!play \"lien youtube\"```",new PlayCommand(null).getDescription(),false);
-        help.addField("```!skip```",new SkipCommand(null).getDescription(),false);
-        help.addField("```!clear```",new ClearCommand(null).getDescription(),false);
-        help.addField("```!liste```",new ShowQueueCommand(null).getDescription(),false);
-        help.addField("```!queljeu```",new WhatGameCommand().getDescription(),false);
+        for(Command c : commands.getCommandList()){
+            help.addField("```" + c.getName() + "```",c.getDescription(),false);
+        }
         help.setColor(Color.BLUE);
         currentChannel.sendMessage(help.build()).complete();
     }

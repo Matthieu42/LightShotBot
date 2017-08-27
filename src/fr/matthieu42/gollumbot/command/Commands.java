@@ -1,5 +1,6 @@
 package fr.matthieu42.gollumbot.command;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,5 +24,8 @@ public class Commands {
     }
     public Command getCommand(String name){
         return commands.get(name);
+    }
+    public Collection<Command> getCommandList(){
+        return commands.values();
     }
 }

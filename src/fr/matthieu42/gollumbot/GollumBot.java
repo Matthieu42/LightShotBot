@@ -27,7 +27,7 @@ public class GollumBot {
                     new WhatGameCommand(),
                     new WebToImageCommand()
             );
-            JDA bot = new JDABuilder(AccountType.BOT).setToken("MzQ4MDUwMzEwNDM1OTYyODkw.DHhSoA.dnTs5eyidhyvOd7iznMPh1EHjfI").setGame(Game.of("Protéger le précieux")).buildAsync();
+            JDA bot = new JDABuilder(AccountType.BOT).setToken("XXX").setGame(Game.of("Protéger le précieux")).buildAsync();
             bot.addEventListener(new MessageListener(commandsList,mentionHandler));
         } catch (LoginException | RateLimitedException e)
         {

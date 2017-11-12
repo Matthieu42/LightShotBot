@@ -15,10 +15,10 @@ public class WebToImageCommand extends  Command {
         String website = event.getMessage().getContent().replaceFirst("!screen ","");
         String http = "http";
         if (!website.contains(http))
-            website = http.concat(website);
+            website = http.concat("://").concat(website);
         try{
             Runtime runtime = Runtime.getRuntime();
-            String[] cmdArray = {"java","-jar", "Website-to-image.jar",website,"0","1000","1200"};
+            String[] cmdArray = {"java","-jar", "Website-to-image.jar",website,"0","800","700"};
             Process process = runtime.exec(cmdArray);
             InputStream ins = process.getInputStream();
             BufferedReader in = new BufferedReader(new InputStreamReader(ins));

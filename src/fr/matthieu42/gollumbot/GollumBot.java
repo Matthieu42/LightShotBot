@@ -11,9 +11,12 @@ import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
 
 import javax.security.auth.login.LoginException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class GollumBot {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         try
         {
             Commands commandsList = new Commands();
@@ -27,7 +30,7 @@ public class GollumBot {
                     new WhatGameCommand(),
                     new WebToImageCommand()
             );
-            JDA bot = new JDABuilder(AccountType.BOT).setToken("MzQ4MDUwMzEwNDM1OTYyODkw.DHhSoA.dnTs5eyidhyvOd7iznMPh1EHjfI").setGame(Game.of("Protéger le précieux")).buildAsync();
+            JDA bot = new JDABuilder(AccountType.BOT).setToken(new String(Files.readAllBytes(Paths.get("./resources/text/token.txt")))).setGame(Game.of("Protéger le précieux")).buildAsync();
             bot.addEventListener(new MessageListener(commandsList,mentionHandler));
         } catch (LoginException | RateLimitedException e)
         {

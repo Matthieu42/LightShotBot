@@ -18,7 +18,7 @@ public class PlayCommand extends MusicCommand {
         Guild guild = event.getGuild();
         User user = event.getAuthor();
         TextChannel textChannel = event.getTextChannel();
-        String command = event.getMessage().getContent();
+        String command = event.getMessage().getContentRaw();
 
         if(guild == null) return;
         if(!guild.getAudioManager().isConnected() && !guild.getAudioManager().isAttemptingToConnect()){

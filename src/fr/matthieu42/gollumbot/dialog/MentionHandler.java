@@ -20,7 +20,7 @@ public class MentionHandler {
     }
 
     public void handle(MessageReceivedEvent event) {
-        String msg = event.getMessage().getRawContent().toLowerCase();
+        String msg = event.getMessage().getContentRaw().toLowerCase();
         TextChannel currentChannel = event.getTextChannel();
         Guild currentGuild = event.getGuild();
         Random rand = new Random();

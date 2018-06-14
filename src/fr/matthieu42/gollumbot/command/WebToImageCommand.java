@@ -12,7 +12,7 @@ public class WebToImageCommand extends  Command {
 
     @Override
     public void execute(MessageReceivedEvent event) {
-        String website = event.getMessage().getContent().replaceFirst("!screen ","");
+        String website = event.getMessage().getContentRaw().replaceFirst("!screen ","");
         String http = "http";
         if (!website.contains(http))
             website = http.concat("://").concat(website);

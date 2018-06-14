@@ -2,11 +2,12 @@ package fr.matthieu42.gollumbot.command;
 
 import net.dv8tion.jda.core.entities.TextChannel;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-import org.apache.commons.lang3.ArrayUtils;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Random;
+import java.util.stream.Stream;
 
 public class WhatGameCommand extends Command {
     public WhatGameCommand() {
@@ -16,7 +17,7 @@ public class WhatGameCommand extends Command {
     @Override
     public void execute(MessageReceivedEvent event) {
         TextChannel currentChannel = event.getTextChannel();
-        String command = event.getMessage().getContent().replaceFirst("!queljeu ", "");
+        String command = event.getMessage().getContentRaw().replaceFirst("!queljeu ", "");
         int nbPlayer;
         try {
             nbPlayer = Integer.parseInt(command);
@@ -32,9 +33,9 @@ public class WhatGameCommand extends Command {
             String[] games3List = new String(Files.readAllBytes(Paths.get("./resources/text/games3.txt"))).split("\n");
             String[] games4List = new String(Files.readAllBytes(Paths.get("./resources/text/games4.txt"))).split("\n");
             String[] games5List = new String(Files.readAllBytes(Paths.get("./resources/text/games5.txt"))).split("\n");
-            String[] games45List = ArrayUtils.addAll(games4List, games5List);
-            String[] games345List = ArrayUtils.addAll(games45List, games3List);
-            String[] games2345List = ArrayUtils.addAll(games345List, games2List);
+            String[] games45List = Stream.concat(Arrays.stream(games4List), Arrays.stream(games5List)).toArray(String[]::new);
+            String[] games345List = Stream.concat(Arrays.stream(games45List), Arrays.stream(games3List)).toArray(String[]::new);
+            String[] games2345List = Stream.concat(Arrays.stream(games345List), Arrays.stream(games2List)).toArray(String[]::new);
             String[][] gamesList = new String[6][];
             gamesList[0] = games2345List;
             gamesList[3] = games345List;

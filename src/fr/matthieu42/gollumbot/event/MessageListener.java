@@ -20,9 +20,9 @@ public class MessageListener extends ListenerAdapter {
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
 
-        if (event.getAuthor().isBot() || event.getMessage().getContent().isEmpty())
+        if (event.getAuthor().isBot() || event.getMessage().getContentRaw().isEmpty())
             return;
-        String msg = event.getMessage().getRawContent();
+        String msg = event.getMessage().getContentRaw();
         TextChannel currentChannel = event.getTextChannel();
         if(msg.charAt(0) == '!'){
             Command command = commandsList.getCommand(msg.split("\\s+")[0]);

@@ -8,6 +8,7 @@ import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
+import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
 
 import javax.security.auth.login.LoginException;
@@ -30,9 +31,13 @@ public class GollumBot {
                     new WhatGameCommand(),
                     new WebToImageCommand()
             );
-            JDA bot = new JDABuilder(AccountType.BOT).setToken(new String(Files.readAllBytes(Paths.get("./resources/text/token.txt")))).setGame(Game.of("Protéger le précieux")).buildAsync();
+            JDA bot = new JDABuilder(AccountType.BOT).setToken(new String(Files.readAllBytes(Paths.get("./resources/text/token.txt")))).setGame(Game.of(Game.GameType.DEFAULT,"Protéger le précieux")).buildAsync();
             bot.addEventListener(new MessageListener(commandsList,mentionHandler));
-        } catch (LoginException | RateLimitedException e)
+            System.out.println("Gollum is connected to :");
+            for (Guild g :bot.getGuilds()) {
+                System.out.println(g.getName());
+            }
+        } catch (LoginException e)
         {
             e.printStackTrace();
         }

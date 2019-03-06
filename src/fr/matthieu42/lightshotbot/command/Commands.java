@@ -1,4 +1,4 @@
-package fr.matthieu42.gollumbot.command;
+package fr.matthieu42.lightshotbot.command;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -23,7 +23,8 @@ public class Commands {
         commands.remove(name);
     }
     public Command getCommand(String name){
-        return commands.get(name);
+        String strNew = name.replace("!", "");
+        return commands.get(strNew);
     }
     public Collection<Command> getCommandList(){
         return commands.values();

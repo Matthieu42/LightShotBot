@@ -1,4 +1,4 @@
-package fr.matthieu42.gollumbot.command;
+package fr.matthieu42.lightshotbot.command;
 
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 

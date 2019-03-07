@@ -15,7 +15,7 @@ public class SpamImage extends Command {
     public void execute(MessageReceivedEvent event) {
 
         TextChannel textChannel = event.getTextChannel();
-        BigInteger d = BigInteger.valueOf(621937810);
+        BigInteger d = BigInteger.valueOf(621939073);
         Boolean run = true;
         while(run){
             if(d.compareTo(BigInteger.valueOf(Long.parseLong("2176782335"))) > 0 )

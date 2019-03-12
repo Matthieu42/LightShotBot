@@ -13,19 +13,20 @@ public class SpamImage extends Command {
 
     @Override
     public void execute(MessageReceivedEvent event) {
+        String valueDepart = event.getMessage().getContentRaw().replaceFirst("!SpamImage ","");
 
         TextChannel textChannel = event.getTextChannel();
-        BigInteger d = BigInteger.valueOf(621939073);
+        BigInteger d = BigInteger.valueOf(Integer.parseInt(valueDepart,36));
         Boolean run = true;
         while(run){
-            if(d.compareTo(BigInteger.valueOf(Long.parseLong("2176782335"))) > 0 )
-                run = false;
+            /*if(d.compareTo(BigInteger.valueOf(Long.parseLong("1381633119"))) > 0 )
+                run = false;*/
             d = d.add(BigInteger.valueOf(1));
             String message = "https://prnt.sc/" +  Integer.toString(Integer.parseInt(d.toString()),36);
             textChannel.sendMessage(message).complete() ;
             System.out.println(message);
             try {
-                Thread.sleep(5000);
+                Thread.sleep(8000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

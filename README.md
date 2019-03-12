@@ -2,4 +2,4 @@
 Un bot discord qui spam les images de lightshot ! 
 
 ## Les différentes commandes :
-### !SpamImage
+### !SpamImage xxxxxx

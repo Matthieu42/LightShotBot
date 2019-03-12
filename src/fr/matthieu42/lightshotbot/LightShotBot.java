@@ -19,7 +19,7 @@ public class LightShotBot {
             Commands commandsList = new Commands();
             commandsList.addCommands(new HelpCommand(commandsList),new SpamImage()
             );
-            JDA bot = new JDABuilder(AccountType.BOT).setToken(new String(Files.readAllBytes(Paths.get("./resources/text/token.txt")))).setGame(Game.of(Game.GameType.DEFAULT,"Ramasse les gros sous")).buildAsync();
+            JDA bot = new JDABuilder(AccountType.BOT).setToken(new String(Files.readAllBytes(Paths.get("./resources/text/token.txt")))).setGame(Game.of(Game.GameType.DEFAULT,"Ramasse les gros sous")).build();
             bot.addEventListener(new MessageListener(commandsList));
         } catch (LoginException e)
         {

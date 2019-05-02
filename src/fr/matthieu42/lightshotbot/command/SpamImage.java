@@ -29,7 +29,7 @@ public class SpamImage extends Command {
             textChannel.sendMessage(message).complete();
             System.out.println(message);
             try {
-                Thread.sleep(5000);
+                Thread.sleep(8000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
